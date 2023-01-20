@@ -2,7 +2,7 @@
 function tcreate -d 'Create new tmux session'
   # Create new tmux session with the name provided by $argv
   if test -n "$argv"
-    tmux new -s $argv[0] 
+    tmux new -s $argv[1] 
   else 
     tmux new
   end

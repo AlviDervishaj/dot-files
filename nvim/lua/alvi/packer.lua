@@ -4,6 +4,16 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Tailwind Css like VS Code
+  use({
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end
+  })
   -- Theme
   use { 'svrana/neosolarized.nvim', requires = { { 'tjdevries/colorbuddy.nvim' } } }
   use {

@@ -46,16 +46,24 @@ lsp.set_preferences({
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
-
+  -- Go to definition
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  -- Hover functionality
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+  -- Search workspace / project for symbol / word 
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  -- Open Diagnostic floating window
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+  -- Go to next / previous diagnostic
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  -- Suggestions of language servers
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+  -- Where is something used
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+  -- Rename globally
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  -- Signature Help
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 

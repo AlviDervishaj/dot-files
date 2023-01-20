@@ -17,6 +17,16 @@ alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
+
+# Java FX Alias
+set -gx FX_PATH ~/.javafx-sdk-20/lib $PATH
+
+# Compile
+alias javafxc "javac --module-path $FX_PATH --add-modules javafx.controls $1"
+
+# Run
+alias javafxr "java --module-path $FX_PATH --add-modules javafx.controls $1"
+
 alias g git
 command -qv nvim && alias vim nvim
 

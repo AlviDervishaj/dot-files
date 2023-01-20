@@ -3,7 +3,7 @@ function tattach -d 'Attach to last session or the session name that you pass in
   # -n checks strings length. Matches if length is non-zero
   # -z matches when strings length is zero
   if test -n "$argv"
-    tmux attach -t $argv[0]
+    tmux attach -t $argv[1]
   else
     tmux a
   end
