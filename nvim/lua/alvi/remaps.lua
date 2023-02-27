@@ -1,5 +1,6 @@
 -- Set leader key to space, because it is more accessible
 vim.g.mapleader = " "
+
 -- Open File Explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -9,6 +10,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Make line below come to this line and keep cursor where it is
 vim.keymap.set("n", "<leader>j", "mzJ`z")
+
 -- Scroll half page, keep cursor in middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -19,17 +21,27 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 vim.keymap.set("x", "p", [["_dP]])
 
--- Split window
+-- testing this
+vim.keymap.set("n", "<leader>w", ":w<Return>", { silent = true })
+
+-- Split window vertically
+vim.keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+
+-- Split window horizontally
 vim.keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
 
+-- Shoutout file
+vim.keymap.set('n', 'so', ':so<Return>', { silent = true })
+
 -- delete but do not store in register
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d<Return>", [["_d]])
 
 -- Do not yank with x
 vim.keymap.set('n', 'x', '"_x')
 
 -- Incremenet
 vim.keymap.set('n', '=', '<C-a>')
+
 -- Decrement
 vim.keymap.set('n', '-', '<C-x>')
 

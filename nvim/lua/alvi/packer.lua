@@ -15,7 +15,10 @@ return require('packer').startup(function(use)
     end
   })
   -- Theme
+  use ('folke/tokyonight.nvim')
   use { 'svrana/neosolarized.nvim', requires = { { 'tjdevries/colorbuddy.nvim' } } }
+
+  -- Productivity plugins
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
